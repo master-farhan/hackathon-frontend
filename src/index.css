@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --color-back: #180a08;
+  --color-grow: #fff;
+  --color-secondary: #5a4740;
+  --color-primary: #81432c;
+
+  --font-ubuntu: "Ubuntu";
+  --font-akaya: "Akaya Kanadaka";
+}
+
+/* flex-center  */
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* abs-center */
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.trans {
+  transition: all 0.5s ease-in-out;
+}
+
+@layer utilities {
+  .section-padding {
+    @apply p-10 pt-25 lg:p-[3vw] lg:pt-[7vw];
+  }
+}
