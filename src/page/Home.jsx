@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
+import Hero from "../components/Hero";
+import Message from "../components/Message";
+import Flavor from "../components/Flavor";
 
 const Home = () => {
   return (
-    <section className='section-padding'>
-      hero
-    </section>
-  )
-}
+    <>
+      <Hero />
+      <Message />
+      <Flavor />
+    </>
+  );
+};
 
-export default Home
+export default Home;
