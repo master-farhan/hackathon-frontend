@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getIceCreams } from "../data/api";
 import IceCreamCard from "../components/IceCreamCard";
-import { iceCreamCategories } from "../constants";
 
 const AllFlavors = () => {
   const [icecreams, setIcecreams] = useState([]);
-
   useEffect(() => {
     getIceCreams().then((res) => setIcecreams(res.data));
   }, []);
@@ -31,7 +29,7 @@ const AllFlavors = () => {
         {/* card */}
         <div className="mx-auto px-5 lg:px-[4vw] py-10 lg:py-[3vw] grid gap-6 lg:gap-[2vw] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {icecreams.length > 0 ? (
-            icecreams.map((item) => <IceCreamCard key={item.id} {...item} />)
+            icecreams.map((item) => <IceCreamCard key={item._id} {...item} />)
           ) : (
             <p className="col-span-full text-center lg:text-[1.5vw] text-dark-brown/50 flex-center h-[20vh]">
               Loading flavors...

@@ -9,7 +9,7 @@ const VideoPin = () => {
         trigger: ".vd-pin-section",
         start: "top top",
         end: "150% top",
-        scrub: 1.5,
+        scrub: 1,
         pin: true,
       },
     });
@@ -35,7 +35,7 @@ const VideoPin = () => {
             // loop
             muted
             src="\videos\pin-vid.mp4"
-            className="rounded-t-3xl size-full absolute inset-0 object-cover"
+            className="size-full absolute inset-0 object-cover"
           ></video>
 
           <div className="abs-center md:scale-100 scale-200">
