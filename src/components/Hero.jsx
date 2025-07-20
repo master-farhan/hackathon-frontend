@@ -62,7 +62,7 @@ const Hero = () => {
   });
 
   return (
-    <section className="bg-main-bg h-screen overflow-hidden">
+    <section className="h-screen overflow-hidden">
       <div className="hero-container relative h-screen w-full bg-milk overflow-hidden flex items-center justify-center text-dark-brown text-center">
         <div className="text-content w-[95vw] flex flex-col items-center justify-center z-1">
           <h1 className="hero-tl text-2xl lg:text-[5.5vw] overflow-hidden font-bold uppercase">
@@ -91,7 +91,7 @@ const Hero = () => {
           />
         </div>
         <img
-          className="hero-img absolute top-[90vh] lg:top-[80vh] w-[50vw] lg:w-[30vw]"
+          className="hero-img absolute top-[90vh] lg:top-[25vh] w-[70vw] lg:w-[70vw]"
           src="/images/hero-img.png"
           alt=""
         />

@@ -10,11 +10,11 @@
 
 @theme {
   --color-black: #222123;
-  --color-primary: #DE2138;
+  --color-primary: #de2138;
   --color-main-bg: #140200;
   --color-grow: #faeade;
-  --color-dark-brown: #6B3C2C;
-  --color-mid-brown: #9E6D5B;
+  --color-dark-brown: #6b3c2c;
+  --color-mid-brown: #9e6d5b;
   --color-light-brown: #e3a458;
   --color-red-brown: #7f3b2d;
   --color-yellow-brown: #a26833;
@@ -53,71 +53,12 @@ body::-webkit-scrollbar {
   .abs-center {
     @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
   }
-}
-
-@layer components {
   .paragraph-line {
     @apply text-nowrap overflow-hidden;
   }
+}
 
-  .hero-container {
-    .hero-content {
-      @apply relative z-10 w-full h-full flex flex-col 2xl:justify-center items-center translate-y-10 2xl:pt-0 md:pt-32 pt-24;
-
-      .hero-title {
-        @apply text-dark-brown 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold uppercase leading-[9vw] tracking-[-.35vw] 2xl:mb-0 mb-5;
-      }
-
-      .hero-text-scroll {
-        @apply rotate-[-3deg] mb-8 border-[.5vw] border-milk;
-
-        .hero-subtitle {
-          @apply bg-mid-brown;
-        }
-
-        h1 {
-          @apply uppercase 2xl:text-[8.5rem] md:text-[6.5rem] text-[3.3rem] font-bold text-[#fce1cd] leading-[9vw] tracking-[-.35vw] 2xl:px-[1.2vw] px-3 2xl:pb-[1vw] pb-5 2xl:py-0 py-3;
-        }
-      }
-
-      h2 {
-        @apply font-paragraph text-dark-brown text-center md:max-w-lg max-w-sm px-5 md:text-lg leading-[115%] mt-3;
-      }
-
-      .hero-button {
-        @apply md:mt-16 mt-10 text-dark-brown bg-light-brown uppercase font-bold text-lg rounded-full md:p-5 p-3 md:px-16 px-10;
-      }
-    }
-  }
-
-  .message-content {
-    p {
-      @apply text-center font-paragraph;
-    }
-  }
-
-  .flavor-section {
-    .slider-wrapper {
-      @apply lg:h-dvh min-h-dvh md:min-h-fit w-full mt-0 md:mt-20 xl:mt-0;
-
-      .flavors {
-        @apply h-full w-full flex md:flex-row flex-col items-center 2xl:gap-72 lg:gap-52 md:gap-24 gap-7 flex-nowrap;
-
-        .drinks {
-          @apply absolute left-1/2 -translate-x-1/2 bottom-0 md:h-full h-80;
-        }
-
-        .elements {
-          @apply absolute md:top-0 md:bottom-auto bottom-10 w-full;
-        }
-
-        h1 {
-          @apply absolute md:bottom-10 md:left-10 bottom-5 left-5 text-milk md:text-6xl text-3xl font-semibold uppercase tracking-tighter;
-        }
-      }
-    }
-  }
-
+@layer components {
   .nutrition-section {
     @apply min-h-dvh 2xl:h-[120dvh] overflow-hidden relative;
 

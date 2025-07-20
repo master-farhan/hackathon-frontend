@@ -8,25 +8,37 @@ import Cart from "./page/Cart";
 import NotFound from "./page/NotFound";
 import Navbar from "./components/Navbar";
 import Account from "./page/Account";
-import { ScrollTrigger } from "gsap/all";
+import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const App = () => {
+  useGSAP(() => {
+    ScrollSmoother.create({
+      smooth: 3,
+      effects: true,
+    });
+  });
+
   return (
-    <main className="bg-main-bg text-grow min-h-screen font-ubuntu">
+    <main className="text-grow min-h-screen font-ubuntu">
       <BrowserRouter>
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <div id="smooth-wrapper">
+          <div id="smooth-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetails />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/account" element={<Account />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </div>
+        </div>
       </BrowserRouter>
     </main>
   );

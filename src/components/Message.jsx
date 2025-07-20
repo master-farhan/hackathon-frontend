@@ -68,7 +68,7 @@ const Message = () => {
   });
 
   return (
-    <section className="message-content rounded-t-3xl bg-dark-brown text-milk lg:py-0 py-30 lg:h-screen overflow-hidden col-center relative z-20 w-full">
+    <section className="message-content rounded-3xl bg-dark-brown text-milk lg:py-0 py-30 lg:h-screen col-center relative z-20 w-full">
       <div className="container mx-auto col-center">
         <div className="w-full h-full">
           <div className="msg-wrapper text-3xl lg:text-[5vw] font-bold leading-[9vw] tracking-[-.10vw] flex flex-col justify-center items-center md:gap-24 gap-14 text-center lg:gap-[4vw] w-full">
@@ -80,15 +80,17 @@ const Message = () => {
               style={{
                 clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
               }}
-              className="polygon-message overflow-hidden -my-14 lg:-my-[4vw]  -rotate-7 border-5 lg:border-[2vw] border-dark-brown"
+              className="polygon-message overflow-hidden -my-20 lg:-my-[7vw] -rotate-7"
             >
-              <h1 className="bg-primary leading-none py-1 lg:py-[.1vw] text-grow px-[1vw]">
-                FUEL UP
-              </h1>
+              <img
+                src="/images/message-img.png"
+                alt=""
+                className="w-40 lg:w-[12vw]"
+              />
             </div>
 
             <h1 className="second-message  md:whitespace-nowrap  leading-none text-mid-brown/50">
-              Cookie Crunch Meets  <br /> Creamy Delight
+              Cookie Crunch Meets <br /> Creamy Delight
             </h1>
           </div>
         </div>
