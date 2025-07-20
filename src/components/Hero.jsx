@@ -83,12 +83,7 @@ const Hero = () => {
             creamy indulgence that turns every mood into a moment worth
             celebrating.
           </p>
-          <Button
-            text="Explore Flavours"
-            isExternal="true"
-            icon="🔍"
-            link="#flavors"
-          />
+          <Button text="Explore Flavours" icon="🔍" link="/flavors" />
         </div>
         <img
           className="hero-img absolute top-[90vh] lg:top-[25vh] w-[70vw] lg:w-[70vw]"

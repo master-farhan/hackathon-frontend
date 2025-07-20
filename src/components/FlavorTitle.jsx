@@ -83,7 +83,7 @@ const FlavorTitle = () => {
   });
 
   return (
-    <div className="general-title flex flex-col justify-center lg:text-[5.5vw] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] h-full lg:gap-[.5vw]  gap-10 lg:pt-[5vw] pl-[5vw]">
+    <div className="general-title flex flex-col justify-center lg:text-[5.5vw] md:text-8xl text-5xl font-bold uppercase leading-[9vw] tracking-[-.35vw] h-full lg:gap-[.5vw]  gap-10 lg:pt-[5vw] pl-[5vw]mt-0 md:mt-20 lg:mt-0">
       <div className="first-split-favorite">
         <h1 className="text-dark-brown">WE HAVE 6</h1>
       </div>

@@ -68,7 +68,7 @@ const Message = () => {
   });
 
   return (
-    <section className="message-content rounded-3xl bg-dark-brown text-milk lg:py-0 py-30 lg:h-screen col-center relative z-20 w-full">
+    <section className="message-content rounded-3xl bg-dark-brown bg-[url()] text-milk lg:py-0 py-30 lg:h-screen col-center relative z-20 w-full">
       <div className="container mx-auto col-center">
         <div className="w-full h-full">
           <div className="msg-wrapper text-3xl lg:text-[5vw] font-bold leading-[9vw] tracking-[-.10vw] flex flex-col justify-center items-center md:gap-24 gap-14 text-center lg:gap-[4vw] w-full">

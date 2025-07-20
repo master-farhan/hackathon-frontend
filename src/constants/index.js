@@ -2,32 +2,32 @@ const flavorlists = [
   {
     name: "Chocolate Milk",
     color: "brown",
-    rotation: "md:rotate-[-10deg] rotate-0",
-    size: "-translate-x-1/2 md:-translate-x-6/9 md:h-12/7 md:bottom-[-4.5vw] -bottom-9 h-90",
+    rotation: "lg:rotate-[-10deg] rotate-0",
+    size: "-translate-x-1/2 lg:-translate-x-6/9 lg:h-12/7 lg:bottom-[-4.5vw] -bottom-9 h-90",
   },
   {
     name: "Stawberry Milk",
     color: "red",
-    rotation: "md:rotate-[10deg] rotate-0",
-    size: "-translate-x-1/2 md:-translate-x-6/9 md:h-10/8 lg:bottom-[-1.4vw] -bottom-2 h-70",
+    rotation: "lg:rotate-[10deg] rotate-0",
+    size: "-translate-x-1/2 lg:-translate-x-6/9 lg:h-10/8 lg:bottom-[-1.4vw] -bottom-2 h-70",
   },
   {
     name: "Peanut Butter Chocolate",
     color: "orange",
-    rotation: "md:rotate-[-10deg] rotate-0",
-    size: "-translate-x-1/2 md:-translate-x-6/10 md:h-7/5 lg:bottom-[-3.3vw] -bottom-7 h-85",
+    rotation: "lg:rotate-[-10deg] rotate-0",
+    size: "-translate-x-1/2 lg:-translate-x-6/10 lg:h-7/5 lg:bottom-[-3.3vw] -bottom-7 h-85",
   },
   {
     name: "Max Chocolate Milk",
     color: "black",
-    rotation: "md:rotate-[10deg] rotate-0",
-    size: "md:-translate-x-6/10 md:h-12/8 lg:bottom-[-2.4vw] -bottom-5  -translate-x-4/9 h-90",
+    rotation: "lg:rotate-[10deg] rotate-0",
+    size: "lg:-translate-x-6/10 lg:h-12/8 lg:bottom-[-2.4vw] -bottom-5  -translate-x-4/9 h-90",
   },
   {
     name: "Vanilla Milkshake",
     color: "white",
-    rotation: "md:rotate-[-10deg] rotate-0",
-    size: "md:-translate-x-1/2 md:h-11/8 lg:bottom-[-1.5vw] -bottom-4 h-85  -translate-x-4/9",
+    rotation: "lg:rotate-[-10deg] rotate-0",
+    size: "lg:-translate-x-1/2 lg:h-11/8 lg:bottom-[-1.5vw] -bottom-4 h-85  -translate-x-4/9",
   },
 ];
 
@@ -41,10 +41,33 @@ const nutrientLists = [
 
 const navLinks = [
   { link: "/", name: "Home" },
-  { link: "/products", name: "Products" },
+  { link: "/flavors", name: "All Flavors" },
   { link: "/about", name: "About" },
   { link: "/cart", name: "Cart" },
   { link: "/account", name: "My Account" },
+];
+
+const iceCreamCategories = [
+  {
+    name: "Classic",
+    // img: "images/classic.png",
+  },
+  {
+    name: "Chocolate",
+    // img: "images/chocolate.png",
+  },
+  {
+    name: "Kulfi",
+    // img: "images/kulfi.png",
+  },  {
+    name: "Fusion Flavors",
+    // img: "images/fusion.png",
+  },
+  {
+    name: "Vegan",
+    // img: "images/vegan.png",
+  },
+
 ];
 
 const cards = [
@@ -97,4 +120,4 @@ const cards = [
   },
 ];
 
-export { flavorlists, nutrientLists, navLinks, cards };
+export { flavorlists, nutrientLists, navLinks, cards, iceCreamCategories };

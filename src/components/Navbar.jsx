@@ -11,10 +11,10 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed w-full top-0 left-0 z-49 md:pl-10 pl-5 lg:pl-[4vw] flex justify-between items-center">
+    <header className="fixed z-50 w-full top-0 left-0 md:pl-10 pl-5 lg:pl-[4vw] flex justify-between items-center pointer-events-none">
       {/* nav  */}
       <nav
-        className={`absolute left-0 h-screen w-full bg-milk rounded-b-3xl z-49 flex flex-col md:px-10 px-5 lg:px-[4vw] pt-[20vh] transition-all duration-400 ${
+        className={`absolute left-0 h-screen w-full bg-milk rounded-b-3xl z-49 flex flex-col md:px-10 px-5 lg:px-[4vw] pt-[20vh] transition-all duration-700 ${
           isOpen ? "top-0" : "-top-[100vh]"
         }`}
       >
@@ -23,7 +23,7 @@ const Navbar = () => {
             onClick={menuHandler}
             key={name}
             to={link}
-            className="text-primary py-7 lg:py-[5vh]  w-full hover:bg-primary hover:text-milk rounded-3xl group transition-all duration-100 text-2xl lg:text-[1.5vw]"
+            className="text-primary py-7 lg:py-[5vh]  w-full hover:bg-primary hover:text-milk rounded-3xl group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto"
           >
             <span className="group-hover:pl-[5vh]"> {name} </span>
           </Link>
@@ -33,7 +33,7 @@ const Navbar = () => {
       {/* menu */}
       <button
         onClick={menuHandler}
-        className={`flex flex-col ${
+        className={`flex flex-col pointer-events-auto ${
           isOpen ? "gap-4 lg:gap-[1vw]" : "gap-2 lg:gap-[.5vw]"
         } cursor-pointer z-50 transition-all duration-300`}
       >
@@ -52,7 +52,7 @@ const Navbar = () => {
       {/* logo */}
       <Link to="/" className="logo z-50">
         <img
-          className="md:w-40 w-30 lg:w-[15vw]"
+          className="md:w-40 w-30 lg:w-[15vw] pointer-events-auto"
           src="/images/havmor.png"
           alt="nav-logo"
         />
