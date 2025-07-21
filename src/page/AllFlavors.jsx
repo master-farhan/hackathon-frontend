@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getIceCreams } from "../data/api";
+import { getIceCreams } from "../data/iceCreamAPI";
 import IceCreamCard from "../components/IceCreamCard";
 
 const AllFlavors = () => {

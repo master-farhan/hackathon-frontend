@@ -5,7 +5,7 @@ import About from "./page/About";
 // import Cart from "./page/Cart";
 import NotFound from "./page/NotFound";
 import Navbar from "./components/Navbar";
-import Account from "./page/Account";
+import Account from "./page/users/Account";
 import { ScrollTrigger, ScrollSmoother } from "gsap/all";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -13,6 +13,7 @@ import AllFlavors from "./page/AllFlavors";
 import FlavorsDetails from "./page/FlavorsDetails";
 import Order from "./page/Order";
 import CreateIceCream from "./components/CreateIceCream";
+import AuthPage from "./auth/AuthPage";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -39,6 +40,9 @@ const App = () => {
               <Route path="/account" element={<Account />} />
               <Route path="/order" element={<Order />} />
               <Route path="/create-icecreame" element={<CreateIceCream />} />
+
+              <Route path="/auth" element={<AuthPage />} />
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
