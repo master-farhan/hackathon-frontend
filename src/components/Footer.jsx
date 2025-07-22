@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-between gap-10 lg:gap-[3vw]:">
         {/* Logo and Socials */}
         <div className="flex flex-col gap-4 lg:gap-[1.5vw]">
-          <Link to="/" className="logo z-50">
+          <Link to="/" className="logo">
             <img
               className="md:w-40 w-30 lg:w-[15vw] pointer-events-auto"
               src="/images/havmor.png"
