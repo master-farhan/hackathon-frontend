@@ -8,7 +8,7 @@ const VideoPin = () => {
       scrollTrigger: {
         trigger: ".vd-pin-section",
         start: "top top",
-        end: "150% top",
+        end: "250% top",
         scrub: 1,
         pin: true,
       },
@@ -34,7 +34,7 @@ const VideoPin = () => {
             autoPlay
             loop
             muted
-            src="\videos\pin-vid.mp4"
+            src="\videos\pin-video.mp4"
             className="size-full absolute inset-0 object-cover"
           ></video>
 
@@ -42,7 +42,7 @@ const VideoPin = () => {
             <img
               src="/images/circle-text.svg"
               alt="circle"
-              className="spin-circle"
+              className="spin-circle size-[15vw]"
             />
 
             <div className="play-btn absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[9vw] flex justify-center items-center bg-[#ffffff1a] backdrop-blur-xl rounded-full">

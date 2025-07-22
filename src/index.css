@@ -9,7 +9,6 @@
 }
 
 @theme {
-  --color-black: #222123;
   --color-primary: #de2138;
   --color-main-bg: #140200;
   --color-grow: #faeade;
@@ -40,7 +39,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 @layer utilities {
@@ -57,74 +56,6 @@ body::-webkit-scrollbar {
     @apply text-nowrap overflow-hidden;
   }
 }
-
-@layer components {
-  .benefit-section {
-    .first-title {
-      @apply rotate-[3deg] relative z-10;
-    }
-
-    .second-title {
-      @apply rotate-[-1deg] md:-translate-y-5;
-    }
-
-    .third-title {
-      @apply rotate-[1deg] md:-translate-y-12 relative z-10;
-    }
-
-    .fourth-title {
-      @apply rotate-[-5deg] md:-translate-y-12;
-    }
-
-    .vd-pin-section {
-      img:first-of-type {
-        @apply size-[15vw];
-      }
-    }
-  }
-
-  .testimonials-section {
-    @apply bg-milk relative w-full h-[120dvh];
-
-    .pin-box {
-      @apply flex items-center justify-center w-full ps-52 absolute 2xl:bottom-32 bottom-[50vh];
-
-      .vd-card {
-        @apply md:w-96 w-80 flex-none md:rounded-[2vw] rounded-3xl -ms-44 overflow-hidden 2xl:relative absolute border-[.5vw] border-milk;
-      }
-    }
-
-    h1 {
-      @apply uppercase text-[20.5vw] leading-[105%] tracking-[-.4vw] ml-[2vw] font-bold;
-    }
-  }
-
-  .footer-section {
-    @apply 2xl:min-h-dvh overflow-hidden relative bg-[#222123];
-
-    .social-btn {
-      @apply border border-[#faeade33] md:size-[5vw] size-14 md:p-0 p-3 flex justify-center items-center rounded-full hover:bg-[#ffffff1a] transition-colors cursor-pointer;
-    }
-
-    input {
-      @apply 2xl:text-4xl text-3xl placeholder:font-bold placeholder:tracking-tighter;
-    }
-
-    .copyright-box {
-      @apply 2xl:absolute w-full md:px-10 px-5 py-7 bottom-0 text-milk opacity-50 md:text-lg font-paragraph flex gap-7 md:flex-row flex-col-reverse md:justify-between justify-center items-center;
-
-      p {
-        @apply text-center;
-      }
-    }
-  }
-}
-
-.nutrition-section {
-  background-color: #faeade00;
-  background-image: radial-gradient(circle, #f3ece2, #dcccb0);
-}
-
 .spin-circle {
   animation: spin 20s linear infinite;
 }
