@@ -15,7 +15,7 @@ const Benefit = () => {
     });
   });
   return (
-    <section className="benefit-section min-h-dvh mt-20 overflow-hidden relative rounded-t-3xl">
+    <section className="benefit-section min-h-dvh overflow-hidden relative rounded-t-3xl">
       <div className="relative overlay-box">
         <VideoPin />
       </div>

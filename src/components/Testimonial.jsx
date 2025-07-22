@@ -78,14 +78,15 @@ const Testimonial = () => {
         </h1>
       </div>
 
-      <div className="pin-box flex items-center justify-center w-full ps-54 lg:ps-[5vw] absolute lg:bottom-[13vw] bottom-[50vh]">
+      <div className="pin-box flex items-center justify-center w-full ps-54 md:ps-[5vw] absolute lg:bottom-[13vw] bottom-[50vh]">
         {cards.map((card, index) => (
           <div
             key={index}
-            className={`vd-card md:w-[20vw] w-60 flex-none md:rounded-[2vw] rounded-3xl -ms-44 md:-ms-[5vw] overflow-hidden lg:relative absolute border-[.5vw] border-milk ${card.translation} ${card.rotation}`}
+            className={`reltive vd-card md:w-[20vw] w-60 flex-none md:rounded-[2vw] rounded-3xl -ms-55 md:-ms-[5vw] overflow-hidden md:relative absolute border-[.5vw] border-milk ${card.translation} ${card.rotation}`}
             onMouseEnter={() => handlePlay(index)}
             onMouseLeave={() => handlePause(index)}
           >
+            <div className="absolute z-10 hover:backdrop-blur-none bg-dark-brown/2 backdrop-blur-xs h-full w-full transition-all duration-300"></div>
             <video
               ref={(el) => (vdRef.current[index] = el)}
               src={card.src}

@@ -88,7 +88,7 @@ const Hero = () => {
         <img
           className="hero-img absolute top-[90vh] lg:top-[25vh] w-[70vw] lg:w-[70vw]"
           src="/images/hero-img.png"
-          alt=""
+          alt="hero-img"
         />
       </div>
     </section>

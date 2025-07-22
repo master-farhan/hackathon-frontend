@@ -35,10 +35,10 @@ const Account = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-milk px-5 lg:px-[4vw] py-[15vh] text-dark-brown">
       <div className="bg-milk rounded-2xl py-8 lg:py-[2.5vw] w-full lg:w-[1/3] text-center">
-        <h2 className="text-2xl lg:text-[2vw] font-bold text-dark-brown mb-4">
+        <h2 className="text-2xl lg:text-[2vw] font-bold text-dark-brown mb-4 lg:mb-[1.2vw]">
           Welcome, {user.name || "User"}!
         </h2>
-        <p className="mb-6">
+        <p className="mb-6 lg:mb-[2vw] text-[1.2vw]">
           Email:{" "}
           <span className="font-medium">{user.email || "Not Provided"}</span>
         </p>
@@ -59,7 +59,7 @@ const Account = () => {
         </h3>
 
         {orders.length === 0 ? (
-          <p className="text-dark-brown/70">No orders found.</p>
+          <p className="text-dark-brown/70 text-[1.2vw]">No orders found.</p>
         ) : (
           <ul className="space-y-4 lg:space-y-[1.4vw] text-left max-h-[30vh] overflow-y-auto px-2 lg:px-[1vw]">
             {orders.map((order) => (
