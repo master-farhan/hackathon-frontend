@@ -86,7 +86,7 @@ const Hero = () => {
           <Button text="Explore Flavours" icon="🔍" link="/flavors" />
         </div>
         <img
-          className="hero-img absolute top-[90vh] lg:top-[25vh] w-[70vw] lg:w-[70vw]"
+          className="hero-img absolute top-[70vh] md:top-[60vh] md:w-3/4 lg:top-[25vh] w-full lg:w-[70vw]"
           src="/images/hero-img.png"
           alt="hero-img"
         />

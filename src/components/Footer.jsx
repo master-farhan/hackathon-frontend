@@ -123,7 +123,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="border-t border-milk md:pt-[2vw] md:mt-5 text-sm lg:text-[1vw] text-milk/80 text-center">
+      <div className="border-t border-milk pt-5 mt-5 md:pt-[2vw] md:mt-5 text-sm lg:text-[1vw] text-milk/80 text-center">
         &copy; {new Date().getFullYear()} Havmor Ice Cream Ltd. All rights
         reserved.
       </div>
