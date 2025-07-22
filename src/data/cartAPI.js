@@ -4,6 +4,7 @@ import API from "./api";
 export const addToCart = (userId, productId, quantity = 1) =>
   API.post("/cart", { userId, productId, quantity });
 
+
 // Get cart by user ID
 export const getCart = (userId) => API.get(`/cart/${userId}`);
 

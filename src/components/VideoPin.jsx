@@ -21,7 +21,7 @@ const VideoPin = () => {
   });
 
   return (
-    <section className="vd-pin-section h-dvh overflow-hidden bg-main-bg">
+    <section className="vd-pin-section h-[110vh] overflow-hidden bg-dark-brown">
       <div
         style={{
           clipPath: "circle(9% at 50% 50%)",

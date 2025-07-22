@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { gsap } from "gsap";
 import { navLinks } from "../constants/index";
 
@@ -11,22 +11,25 @@ const Navbar = () => {
   };
 
   return (
-    <header className="fixed z-50 w-full top-0 left-0 md:pl-10 pl-5 lg:pl-[4vw] flex justify-between items-center pointer-events-none">
+    <header className="fixed z-100 w-full top-0 left-0 md:pl-10 pl-5 lg:pl-[4vw] flex justify-between items-center pointer-events-none">
       {/* nav  */}
       <nav
-        className={`absolute left-0 h-screen w-full bg-milk rounded-b-3xl z-49 flex flex-col md:px-10 px-5 lg:px-[4vw] pt-[20vh] transition-all duration-700 ${
+        className={`absolute left-0 h-screen w-full bg-milk  z-50 flex flex-col gap-[2vh] md:px-10 px-5 lg:px-[4vw] pt-[20vh] transition-all duration-700 ${
           isOpen ? "top-0" : "-top-[100vh]"
         }`}
       >
         {navLinks.map(({ link, name }) => (
-          <Link
+          <NavLink
             onClick={menuHandler}
             key={name}
             to={link}
-            className="text-primary py-7 lg:py-[5vh]  w-full hover:bg-primary hover:text-milk rounded-3xl group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto"
+            className={({ isActive }) =>
+              `py-5 lg:py-[4vh] w-full rounded group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto
+      ${isActive ? "bg-primary text-milk pl-[5vh]" : "hover:pl-[5vh] text-primary bg-milk hover:bg-primary hover:text-milk"}`
+            }
           >
-            <span className="group-hover:pl-[5vh]"> {name} </span>
-          </Link>
+            <span className=""> {name} </span>
+          </NavLink>
         ))}
       </nav>
 
@@ -50,7 +53,11 @@ const Navbar = () => {
       </button>
 
       {/* logo */}
-      <Link to="/" className="logo z-50">
+      <Link
+        to="/"
+        className="logo z-50"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      >
         <img
           className="md:w-40 w-30 lg:w-[15vw] pointer-events-auto"
           src="/images/havmor.png"

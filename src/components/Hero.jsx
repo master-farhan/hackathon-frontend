@@ -9,7 +9,7 @@ const Hero = () => {
     const titleSplit = SplitText.create(".hero-tl", { type: "chars" });
 
     const tl = gsap.timeline({
-      delay: 1,
+      delay: .5,
     });
 
     tl.from(".text-content", {
