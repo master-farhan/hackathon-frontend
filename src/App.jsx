@@ -18,7 +18,7 @@ import AuthPage from "./auth/AuthPage";
 import AuthRoute from "./auth/AuthRoute";
 import GuestRoute from "./auth/GuestRoute";
 import Cart from "./page/Cart";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
