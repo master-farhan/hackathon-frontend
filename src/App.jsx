@@ -18,6 +18,7 @@ import AuthPage from "./auth/AuthPage";
 import AuthRoute from "./auth/AuthRoute";
 import GuestRoute from "./auth/GuestRoute";
 import Cart from "./page/Cart";
+import Footer from "./components/footer";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -75,6 +76,8 @@ const App = () => {
               {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+
+            <Footer />
           </div>
         </div>
       </BrowserRouter>
