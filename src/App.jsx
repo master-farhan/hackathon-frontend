@@ -2,7 +2,6 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./page/Home";
 import About from "./page/About";
-// import Cart from "./page/Cart";
 import NotFound from "./page/NotFound";
 import Navbar from "./components/Navbar";
 import Account from "./page/users/Account";
@@ -15,16 +14,14 @@ import Order from "./page/Order";
 import CreateIceCream from "./components/CreateIceCream";
 import AuthPage from "./auth/AuthPage";
 
+// Auth route wrappers
+import AuthRoute from "./auth/AuthRoute";
+import GuestRoute from "./auth/GuestRoute";
+import Cart from "./page/Cart";
+
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 const App = () => {
-  // useGSAP(() => {
-  //   ScrollSmoother.create({
-  //     smooth: 1,
-  //     effects: true,
-  //   });
-  // });
-
   return (
     <main className="text-grow min-h-screen font-ubuntu">
       <BrowserRouter>
@@ -33,16 +30,49 @@ const App = () => {
           <div id="smooth-content">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
               <Route path="/flavors" element={<AllFlavors />} />
               <Route path="/flavors/:id" element={<FlavorsDetails />} />
-              <Route path="/about" element={<About />} />
-              {/* <Route path="/cart" element={<Cart />} /> */}
-              <Route path="/account" element={<Account />} />
-              <Route path="/order" element={<Order />} />
               <Route path="/create-icecreame" element={<CreateIceCream />} />
 
-              <Route path="/auth" element={<AuthPage />} />
+              {/* 🔐 Protected Routes */}
+              <Route
+                path="/account"
+                element={
+                  <AuthRoute>
+                    <Account />
+                  </AuthRoute>
+                }
+              />
+              <Route
+                path="/orders/:id"
+                element={
+                  <AuthRoute>
+                    <Order />
+                  </AuthRoute>
+                }
+              />
+              {/* Example: Cart */}
+              <Route
+                path="/cart"
+                element={
+                  <AuthRoute>
+                    <Cart />
+                  </AuthRoute>
+                }
+              />
 
+              {/* 🔓 Guest-only Routes */}
+              <Route
+                path="/auth"
+                element={
+                  <GuestRoute>
+                    <AuthPage />
+                  </GuestRoute>
+                }
+              />
+
+              {/* 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>

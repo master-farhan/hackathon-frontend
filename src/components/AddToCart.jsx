@@ -2,18 +2,18 @@ import React from "react";
 import { addToCart } from "../data/cartAPI";
 
 const AddToCart = ({ id }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const handleAddToCart = async () => {
     try {
-      await addToCart("farhan123", id);
-      console.log(id);
+      await addToCart(user.id, id, 1);
       alert("Added to cart");
     } catch (err) {
       console.error(err);
       alert("Failed to add");
     }
   };
-
-
+  
   return (
     <button
       onClick={handleAddToCart}

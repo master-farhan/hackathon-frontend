@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "https://hackathon-backend-zky6.onrender.com/",
 });
 
 export default API;

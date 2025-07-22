@@ -9,16 +9,9 @@ const Benefit = () => {
       scrollTrigger: {
         trigger: ".vd-pin-section",
         start: "-15% bottom",
-        end: "top top",
+        end: "top 30%",
         scrub: 1.5,
       },
-    });
-
-    tl.from(".vd-pin-section", {
-      ease: "power1.inOut",
-      scale: 0.5,
-      borderRadius: 50,
-      yPercent: -30,
     });
   });
   return (

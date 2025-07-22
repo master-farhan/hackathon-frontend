@@ -31,8 +31,8 @@ const VideoPin = () => {
         <div>
           <video
             playsInline
-            // autoPlay
-            // loop
+            autoPlay
+            loop
             muted
             src="\videos\pin-vid.mp4"
             className="size-full absolute inset-0 object-cover"

@@ -27,7 +27,6 @@ const AuthPage = () => {
       localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("token", res.data.token);
 
-      alert(isLogin ? "Login successful!" : "Registration successful!");
       setForm({ name: "", email: "", password: "" });
       window.location.href = "/";
     } catch (err) {
@@ -39,16 +38,21 @@ const AuthPage = () => {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-milk text-dark-brown px-4">
-      <div className="bg-milk p-8 rounded-xl shadow-xl w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">
+      <div className="bg-milk p-8 lg:p-[2.5vw] rounded-xl shadow-xl w-full lg:w-1/3">
+        <h2 className="text-2xl text-primary lg:text-[2vw] font-bold mb-6 lg:mb-[2vw] text-center">
           {isLogin ? "Login" : "Create Account"}
         </h2>
 
         {error && (
-          <p className="mb-4 text-center text-red-600 font-semibold">{error}</p>
+          <p className="mb-4 lg:mb-[1.4vw] text-center text-red-600 font-semibold">
+            {error}
+          </p>
         )}
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4 lg:space-y-[1.5vw] lg:text-[1.2vw]"
+        >
           {!isLogin && (
             <input
               type="text"
@@ -56,7 +60,7 @@ const AuthPage = () => {
               placeholder="Name"
               value={form.name}
               onChange={handleChange}
-              className="w-full p-2 border rounded"
+              className="w-full p-2 border-primary outline-primary lg:p-[.7vw] border rounded"
               required
               disabled={loading}
             />
@@ -68,7 +72,7 @@ const AuthPage = () => {
             placeholder="Email"
             value={form.email}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border-primary outline-primary lg:p-[.7vw] border rounded"
             required
             disabled={loading}
           />
@@ -79,7 +83,7 @@ const AuthPage = () => {
             placeholder="Password"
             value={form.password}
             onChange={handleChange}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border-primary outline-primary lg:p-[.7vw] border rounded"
             required
             disabled={loading}
           />
@@ -87,8 +91,10 @@ const AuthPage = () => {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded text-white ${
-              loading ? "bg-gray-400 cursor-not-allowed" : "bg-blue-600 hover:bg-blue-700"
+            className={`w-full py-2 lg:py-[.7vw] rounded text-milk ${
+              loading
+                ? "bg-primary/50 cursor-not-allowed"
+                : "bg-primary hover:bg-primary/90"
             }`}
           >
             {loading
@@ -101,15 +107,15 @@ const AuthPage = () => {
           </button>
         </form>
 
-        <p className="text-center mt-4 text-sm">
-          {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
+        <p className="text-center text-dark-brown mt-4 lg:text-[.9vw] lg:mt-[1.3vw] text-sm">
+          {isLogin ? "Don't have an account?" : "Already have an account?"}
           <button
             onClick={() => {
               setIsLogin(!isLogin);
               setError("");
               setForm({ name: "", email: "", password: "" });
             }}
-            className="text-blue-600 underline"
+            className="text-primary cursor-pointer underline"
             disabled={loading}
           >
             {isLogin ? "Sign up" : "Login"}

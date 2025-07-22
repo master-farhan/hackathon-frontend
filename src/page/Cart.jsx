@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { getCart, removeFromCart } from "../data/api";
+import { getCart, deleteCartItem } from "../data/cartAPI";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -8,8 +8,16 @@ const Cart = () => {
   useEffect(() => {
     const fetchCart = async () => {
       try {
-        const { data } = await getCart();
-        setCartItems(data);
+        const user = JSON.parse(localStorage.getItem("user"));
+        if (!user) {
+          alert("Please login first");
+          setLoading(false);
+          return;
+        }
+        const userId = user.id;
+        // এখন userId সহ getCart কল দিচ্ছি
+        const {data} = await getCart(userId);
+        setCartItems(data.items || []);
       } catch (err) {
         console.error("Failed to fetch cart:", err);
       } finally {
@@ -19,22 +27,28 @@ const Cart = () => {
     fetchCart();
   }, []);
 
-  const handleRemove = async (id) => {
+  const handleRemove = async (productId) => {
     try {
-      await removeFromCart(id);
-      setCartItems((prev) => prev.filter((item) => item.id !== id));
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (!user) return;
+
+      const userId = user.id;
+      await deleteCartItem(userId, productId); // productId দিবে
+      setCartItems((prev) =>
+        prev.filter((item) => item.product._id !== productId)
+      );
     } catch (err) {
       console.error("Error removing item:", err);
     }
   };
 
   const total = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => acc + item.product.price * item.quantity,
     0
   );
 
   return (
-    <div className="min-h-screen bg-milk text-[#523122] font-antonio px-4 py-10">
+    <div className="min-h-screen px-6 lg:px-[4vw] pt-[18vh] pb-[5vh] bg-milk text-dark-brown grid md:grid-cols-2 gap-8 lg:gap-[2.5vw]">
       <div className="max-w-5xl mx-auto">
         <h1 className="text-3xl font-bold mb-6">🛒 Your Cart</h1>
 
@@ -46,28 +60,30 @@ const Cart = () => {
           <div className="space-y-6">
             {cartItems.map((item) => (
               <div
-                key={item.id}
+                key={item.product._id}
                 className="flex items-center justify-between bg-white p-4 rounded-xl shadow-sm"
               >
                 <div className="flex items-center gap-4">
                   <img
-                    src={item.image}
-                    alt={item.name}
+                    src={item.product.image}
+                    alt={item.product.name}
                     className="w-20 h-20 object-cover rounded-md"
                   />
                   <div>
-                    <h2 className="text-xl font-semibold">{item.name}</h2>
+                    <h2 className="text-xl font-semibold">
+                      {item.product.name}
+                    </h2>
                     <p className="text-sm text-gray-500">
-                      ৳ {item.price} × {item.quantity}
+                      ৳ {item.product.price} × {item.quantity}
                     </p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
                   <p className="text-lg font-bold">
-                    ৳ {item.price * item.quantity}
+                    ৳ {item.product.price * item.quantity}
                   </p>
                   <button
-                    onClick={() => handleRemove(item.id)}
+                    onClick={() => handleRemove(item.product._id)}
                     className="text-red-500 hover:underline"
                   >
                     ✖

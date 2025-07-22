@@ -63,7 +63,7 @@ const FlavorsDetails = () => {
 
           {flavor.stock ? (
             <Link
-              to={"/order"}
+              to={`/orders/${id}`}
               className="h-8 w-25 lg:w-[7vw] flex-center lg:h-[2.5vw] text-xs lg:text-[.9vw] hover:text-sm lg:hover:text-[1vw] transition-all duration-300 rounded-full bg-primary text-milk hover:bg-primary/90"
             >
               Order Now
