@@ -67,8 +67,9 @@ const About = () => {
   return (
     <section
       ref={aboutRef}
-      className="min-h-screen px-5 lg:px-[4vw] pt-[13vh] pb-[10vh] lg:pt-[20vh] bg-milk text-dark-brown overflow-hidden"
+      className="min-h-screen px-5 lg:px-[4vw] pt-[13vh] pb-[10vh] lg:pt-[20vh] bg-[#FFFFFF] text-dark-brown overflow-hidden"
     >
+      <img src="/images/Know-us.webp" alt="know-us" className="w-full" />
       <div className="w-full mx-auto">
         <h2
           ref={headingRef}
@@ -87,50 +88,38 @@ const About = () => {
           each scoop is crafted with love, quality, and innovation.
         </p>
 
-        <div className="grid lg:grid-cols-3 gap-10 lg:gap-[3vw] items-center">
-          <div className="">
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-[3vw] items-center">
+          {" "}
+          <img
+            src="/images/about3.webp"
+            alt=""
+            className="w-full h-[50vh] object-contain"
+          />
+          <div className="w-full">
             <h3
               ref={addToRefs}
               className="text-2xl lg:text-[1.5vw] lg:mb-[1.4vw] font-semibold mb-4"
             >
-              Our Mission
+              Havmor - Innovating Always
             </h3>
             <p
               ref={addToRefs}
               className="text-base lg:text-[1.2vw] lg:mb-[2vw] leading-relaxed mb-6"
             >
-              We aim to redefine dessert culture by combining tradition with
-              creativity. Havmor stands for purity, delight, and memorable
-              experiences — whether it’s a summer treat or a cozy winter
-              indulgence.
+              We carry innovation in our hearts, coming up with unique flavours
+              for you to experience. It’s the essence of every creation. From
+              traditional recipes like Kulfis to modern favourites like Belgian
+              Dark Chocolate and Hazelnut Ice Cream Cake, our portfolio boasts
+              of 150+ products and speaks for our wide range. Signature tubs,
+              ice candies, crunchy cones, you name it and we have it!
             </p>
-            <h3
-              ref={addToRefs}
-              className="text-2xl lg:text-[1.5vw] lg:mb-[1.4vw] font-semibold mb-4"
-            >
-              Our Location
-            </h3>
             <p
               ref={addToRefs}
-              className="text-base lg:text-[1.2vw] leading-relaxed"
+              className="text-base text-primary lg:text-[1.2vw] leading-relaxed"
             >
-              Based in the heart of flavor, our store welcomes you with a vibe
-              of comfort, smiles, and of course, irresistible ice creams!
+              Oh! And here’s something we are super proud of! We have 10
+              consecutive wins at the Times Food Awards since 2009 in our kitty!
             </p>
-          </div>
-
-          <div
-            ref={addToRefs}
-            className="w-full h-[300px] lg:h-[25vw] rounded-xl overflow-hidden lg:col-span-2"
-          >
-            <iframe
-              title="Havmor Location"
-              className="w-full h-full border-none"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3663.389820914389!2d77.41354877407813!3d23.259933709658343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c43eec0e0bdf3%3A0x3a2b50f84f270e90!2sBhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1721667000000!5m2!1sen!2sin"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
           </div>
         </div>
       </div>

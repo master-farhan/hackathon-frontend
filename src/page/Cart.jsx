@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getCart, deleteCartItem } from "../data/cartAPI";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -15,7 +16,6 @@ const Cart = () => {
           return;
         }
         const userId = user.id;
-        // এখন userId সহ getCart কল দিচ্ছি
         const { data } = await getCart(userId);
         setCartItems(data.items || []);
       } catch (err) {
@@ -33,7 +33,7 @@ const Cart = () => {
       if (!user) return;
 
       const userId = user.id;
-      await deleteCartItem(userId, productId); // productId দিবে
+      await deleteCartItem(userId, productId);
       setCartItems((prev) =>
         prev.filter((item) => item.product._id !== productId)
       );
@@ -104,9 +104,14 @@ const Cart = () => {
           Total: ₹ {total}
         </div>
         <div className="flex justify-end">
-          <button className="h-8 w-43 mt-[.9vh] lg:w-[14vw] flex-center lg:h-[3vw] text-xs lg:text-[1vw] hover:text-sm lg:hover:text-[1.1vw] transition-all duration-300 rounded-full bg-primary text-milk hover:bg-primary/90 cursor-pointer">
+          <Link
+            to={`/orders/${cartItems
+              .map((item) => item.product._id)
+              .join(",")}`}
+            className="h-8 w-43 mt-[.9vh] lg:w-[14vw] flex-center lg:h-[3vw] text-xs lg:text-[1vw] hover:text-sm lg:hover:text-[1.1vw] transition-all duration-300 rounded-full bg-primary text-milk hover:bg-primary/90 cursor-pointer"
+          >
             Proceed to Checkout 🧾
-          </button>
+          </Link>
         </div>
       </div>
     </div>

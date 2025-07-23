@@ -20,7 +20,7 @@ const AllFlavors = () => {
       </div>
 
       {/* Add top padding so content doesn't go under fixed search bar */}
-      <section className="pt-[20vh]">
+      <section className="pt-[20vh] pb-[5vw]">
         {/* category */}
         {/* <div className="w-full h-[30vh] flex justify-between px-[4vw] gap-[1vw] overflow-auto scroll-auto">
           category here 
