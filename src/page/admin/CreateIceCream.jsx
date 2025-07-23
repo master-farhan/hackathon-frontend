@@ -76,7 +76,7 @@ const CreateIceCream = () => {
           type="text"
           placeholder="Name"
           {...register("name", { required: true })}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
         {errors.name && <p className="text-red-500">Name is required</p>}
 
@@ -84,7 +84,7 @@ const CreateIceCream = () => {
         <textarea
           placeholder="Description"
           {...register("description")}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
 
         {/* Price */}
@@ -92,14 +92,14 @@ const CreateIceCream = () => {
           type="number"
           placeholder="Price"
           {...register("price", { required: true, min: 0 })}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
         {errors.price && <p className="text-red-500">Price is required</p>}
 
         {/* Category */}
         <select
           {...register("category", { required: true })}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         >
           <option value="">Select Category</option>
           {categories.map((cat) => (
@@ -117,7 +117,7 @@ const CreateIceCream = () => {
           type="number"
           placeholder="Stock (default 10)"
           {...register("stock", { valueAsNumber: true })}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
 
         {/* Rating */}
@@ -129,7 +129,7 @@ const CreateIceCream = () => {
             min: 0,
             max: 5,
           })}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
 
         {/* isAvailable */}
@@ -151,14 +151,14 @@ const CreateIceCream = () => {
             setDragImage(null);
             setSelectedFile(null);
           }}
-          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/20 rounded text-base lg:text-[1.2vw]"
+          className="w-full p-2 lg:p-[.5vw] border outline-primary border-primary/50 rounded text-base lg:text-[1.2vw]"
         />
 
         {/* Drag + Choose File in One */}
         <div
           onDrop={handleImageDrop}
           onDragOver={(e) => e.preventDefault()}
-          className="relative w-full p-5 text-base lg:text-[1.2vw] lg:p-[1.5vw] border-2 border-dashed border-primary/20 rounded text-center cursor-pointer bg-primary/20 text-dark-brown"
+          className="relative w-full p-5 text-base lg:text-[1.2vw] lg:p-[1.5vw] border-2 border-dashed border-primary/50 rounded text-center cursor-pointer bg-primary/20 text-dark-brown"
           onClick={() => document.getElementById("fileInput").click()}
         >
           <input

@@ -10,7 +10,8 @@ export const getIceCreamById = (id) => API.get(`/icecreams/${id}`);
 export const createIceCream = (data) => API.post("/icecreams", data);
 
 // Update
-export const updateIceCream = (id, data) => API.patch(`/icecreams/${id}`, data);
+export const updateIceCream = (id, iceCreamData) =>
+  API.patch(`/icecreams/${id}`, iceCreamData);
 
 // Delete
 export const deleteIceCream = (id) => API.delete(`/icecreams/${id}`);
