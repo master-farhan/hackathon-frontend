@@ -1,17 +1,16 @@
-// src/data/iceCreamAPI.js
 import API from "./api";
 
-// Get all ice creams
+// Get all
 export const getIceCreams = () => API.get("/icecreams");
 
-// Get single ice cream by ID
+// Get single
 export const getIceCreamById = (id) => API.get(`/icecreams/${id}`);
 
-// Create new ice cream
+// Create
 export const createIceCream = (data) => API.post("/icecreams", data);
 
-// Update ice cream by ID
+// Update
 export const updateIceCream = (id, data) => API.patch(`/icecreams/${id}`, data);
 
-// Delete ice cream by ID
+// Delete
 export const deleteIceCream = (id) => API.delete(`/icecreams/${id}`);

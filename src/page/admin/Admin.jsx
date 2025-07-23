@@ -16,9 +16,9 @@ const Admin = () => {
   };
 
   return (
-    <div className="flex min-h-screen py-[20vh] px-5 lg:px-[4vw]">
+    <div className="flex justify-between flex-col md:flex-row min-h-screen py-[15vh] px-5 md:px-[4vw]">
       {/* Sidebar */}
-      <aside className="w-[250px] bg-milk text-dark-brown space-y-4 lg:space-y-[1.4vw]">
+      <aside className="md:w-[25vw] lg:w-[20vw] bg-milk text-dark-brown space-y-4 lg:space-y-[1.4vw]">
         <h2 className="text-2xl lg:text-[1.8vw] font-bold mb-6 lg:mb-[2vw]">Admin Panel</h2>
         {adminLinks.map(({ name, path }) => (
           <NavLink
@@ -26,7 +26,7 @@ const Admin = () => {
             to={path}
             end
             className={({ isActive }) =>
-              `block px-4 py-2 lg:px-[1.4vw] lg:py-[.8vw] transition-all duration-150 rounded-[.3vw] ${
+              `block px-4 py-2 lg:px-[1.4vw] text-base lg:text-[1.2vw] lg:py-[.8vw] transition-all duration-150 rounded-[.3vw] ${
                 isActive
                   ? "bg-primary text-milk font-semibold"
                   : "hover:bg-primary/20 text-dark-brown"
@@ -45,7 +45,7 @@ const Admin = () => {
       </aside>
 
       {/* Content Area */}
-      <main className="flex-1 p-6 lg:p-[2vw] bg-milk">
+      <main className="flex-1 lg:px-[2vw] md:pl-[10vw] lg:pl-[5vw] md:pt-0 pt-10">
         <Outlet />
       </main>
     </div>

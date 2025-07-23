@@ -24,6 +24,8 @@ import SeeOrders from "./page/admin/SeeOrders";
 import UpdateIceCream from "./page/admin/UpdateIceCream";
 import DeleteIceCream from "./page/admin/DeleteIceCream";
 import CreateIceCream from "./page/admin/CreateIceCream";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -31,6 +33,7 @@ const App = () => {
   return (
     <main className="text-grow min-h-screen font-ubuntu">
       <BrowserRouter>
+        <ToastContainer position="bottom-right" />
         <Navbar />
         <div id="smooth-wrapper">
           <div id="smooth-content">
