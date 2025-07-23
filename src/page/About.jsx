@@ -121,7 +121,7 @@ const About = () => {
 
           <div
             ref={addToRefs}
-            className="w-full h-[300px] lg:h-[25vw] rounded-xl overflow-hidden shadow-xl lg:col-span-2"
+            className="w-full h-[300px] lg:h-[25vw] rounded-xl overflow-hidden lg:col-span-2"
           >
             <iframe
               title="Havmor Location"

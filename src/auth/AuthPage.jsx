@@ -17,15 +17,14 @@ const AuthPage = () => {
     setError("");
 
     try {
-      let res;
-      if (isLogin) {
-        res = await loginUser(form);
-      } else {
-        res = await registerUser(form);
-      }
+      const res = isLogin
+        ? await loginUser(form)
+        : await registerUser(form);
 
-      localStorage.setItem("user", JSON.stringify(res.data.user));
-      localStorage.setItem("token", res.data.token);
+      const { user, token } = res.data;
+
+      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("token", token);
 
       setForm({ name: "", email: "", password: "" });
       window.location.href = "/";
@@ -108,7 +107,7 @@ const AuthPage = () => {
         </form>
 
         <p className="text-center text-dark-brown mt-4 lg:text-[.9vw] lg:mt-[1.3vw] text-sm">
-          {isLogin ? "Don't have an account?" : "Already have an account?"}
+          {isLogin ? "Don't have an account?" : "Already have an account?"}{" "}
           <button
             onClick={() => {
               setIsLogin(!isLogin);

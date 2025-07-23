@@ -45,6 +45,7 @@ const App = () => {
                   </AuthRoute>
                 }
               />
+
               <Route
                 path="/orders/:id"
                 element={
