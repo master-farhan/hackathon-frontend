@@ -11,7 +11,6 @@ import { useGSAP } from "@gsap/react";
 import AllFlavors from "./page/AllFlavors";
 import FlavorsDetails from "./page/FlavorsDetails";
 import Order from "./page/Order";
-import CreateIceCream from "./components/CreateIceCream";
 import AuthPage from "./auth/AuthPage";
 
 // Auth route wrappers
@@ -19,6 +18,12 @@ import AuthRoute from "./auth/AuthRoute";
 import GuestRoute from "./auth/GuestRoute";
 import Cart from "./page/Cart";
 import Footer from "./components/Footer";
+import Admin from "./page/Admin/Admin";
+import Dashboard from "./page/admin/Dashboard";
+import SeeOrders from "./page/admin/SeeOrders";
+import UpdateIceCream from "./page/admin/UpdateIceCream";
+import DeleteIceCream from "./page/admin/DeleteIceCream";
+import CreateIceCream from "./page/admin/CreateIceCream";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -45,6 +50,21 @@ const App = () => {
                   </AuthRoute>
                 }
               />
+
+              <Route
+                path="/admin"
+                element={
+                  <AuthRoute>
+                    <Admin />
+                  </AuthRoute>
+                }
+              >
+                <Route index element={<Dashboard />} />
+                <Route path="orders" element={<SeeOrders />} />
+                <Route path="create" element={<CreateIceCream />} />
+                <Route path="update" element={<UpdateIceCream />} />
+                <Route path="delete" element={<DeleteIceCream />} />
+              </Route>
 
               <Route
                 path="/orders/:id"

@@ -57,7 +57,7 @@ const Footer = () => {
 
         {/* Links */}
         <div className="md:flex-center pt-[2vw]">
-          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-5 md:gap-[2vw] lg:gap-[3vw] lg:text-[1vw] text-xs">
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-5 md:gap-[2vw] lg:gap-[3vw] lg:text-[1vw] text-xs">
             <div>
               <h4 className="font-semibold mb-3 lg:text-[1.3vw] whitespace-nowrap md:mb-[1.5vw]">
                 KNOW US BETTER
@@ -141,7 +141,7 @@ const Footer = () => {
             </div>
             <div>
               <h4 className="font-semibold mb-3 lg:text-[1.3vw] whitespace-nowrap md:mb-[1.5vw]">
-                CHOOSE YOUR PALETTE
+                CHOOSE PALETTE
               </h4>
               <ul className="space-y-2 lg:space-y-[.8vw]">
                 <li>
@@ -170,7 +170,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>{" "}
+            </div>
             <div>
               <h4 className="font-semibold mb-3 lg:text-[1.3vw] whitespace-nowrap md:mb-[1.5vw]">
                 Customer Care

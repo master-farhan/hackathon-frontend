@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { loginUser, registerUser } from "../data/userAPI";
+import { useNavigate } from "react-router-dom";
 
 const AuthPage = () => {
+  const navigate = useNavigate();
+
   const [isLogin, setIsLogin] = useState(true);
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [loading, setLoading] = useState(false);
@@ -17,17 +20,22 @@ const AuthPage = () => {
     setError("");
 
     try {
-      const res = isLogin
-        ? await loginUser(form)
-        : await registerUser(form);
-
+      const res = isLogin ? await loginUser(form) : await registerUser(form);
       const { user, token } = res.data;
 
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("token", token);
 
       setForm({ name: "", email: "", password: "" });
-      window.location.href = "/";
+
+      // ✅ Redirect based on admin status
+      if (user.isAdmin) {
+        window.location.href = "/admin";
+        navigate("/admin");
+      } else {
+        window.location.href = "/account";
+        navigate("/account");
+      }
     } catch (err) {
       setError(err.response?.data?.error || "Something went wrong");
     } finally {
