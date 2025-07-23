@@ -18,7 +18,7 @@ import AuthRoute from "./auth/AuthRoute";
 import GuestRoute from "./auth/GuestRoute";
 import Cart from "./page/Cart";
 import Footer from "./components/Footer";
-import Admin from "./page/Admin/Admin";
+import Admin from "./page/admin/Admin";
 import Dashboard from "./page/admin/Dashboard";
 import SeeOrders from "./page/admin/SeeOrders";
 import UpdateIceCream from "./page/admin/UpdateIceCream";
