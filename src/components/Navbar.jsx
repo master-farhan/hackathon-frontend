@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { gsap } from "gsap";
-import { navLinks } from "../constants/index";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { navLinks } from "../constants";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,10 +14,15 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  // Scroll smoothly to top on navigation
+  const handleNavClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    menuHandler(); // close menu on nav click
+  };
+
   return (
     <header className="fixed z-100 w-full top-0 left-0 md:pl-10 pl-5 lg:pl-[4vw] flex justify-between items-center pointer-events-none">
       {/* nav  */}
-
       <nav
         className={`absolute left-0 h-screen w-full bg-milk z-50 flex flex-col gap-[2vh] md:px-10 px-5 lg:px-[4vw] pt-[20vh] transition-all duration-700 ${
           isOpen ? "top-0" : "-top-[100vh]"
@@ -25,7 +30,7 @@ const Navbar = () => {
       >
         {navLinks.map(({ link, name }) => (
           <NavLink
-            onClick={menuHandler}
+            onClick={handleNavClick}
             key={name}
             to={link}
             className={({ isActive }) =>
@@ -40,10 +45,10 @@ const Navbar = () => {
           </NavLink>
         ))}
 
-        {/* ✅ Conditionally render Admin or Account */}
+        {/* Conditionally render Admin or Account */}
         {user ? (
           <NavLink
-            onClick={menuHandler}
+            onClick={handleNavClick}
             to={isAdmin ? "/admin" : "/account"}
             className={({ isActive }) =>
               `py-5 lg:py-[4vh] w-full rounded group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto ${
@@ -57,7 +62,7 @@ const Navbar = () => {
           </NavLink>
         ) : (
           <NavLink
-            onClick={menuHandler}
+            onClick={handleNavClick}
             to={"/auth"}
             className={({ isActive }) =>
               `py-5 lg:py-[4vh] w-full rounded group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto ${
@@ -78,27 +83,29 @@ const Navbar = () => {
         className={`flex flex-col pointer-events-auto ${
           isOpen ? "gap-4 lg:gap-[1vw]" : "gap-2 lg:gap-[.5vw]"
         } cursor-pointer z-50 transition-all duration-300`}
+        aria-label="Toggle menu"
       >
         <div
-          className={`menu-line1 h-1 w-12 lg:h-[.3vw] lg:w-[4vw]  rounded-full ${
-            isOpen ? "bg-primary" : "bg-primary"
-          } transition-all duration-300`}
+          className={`menu-line1 h-1 w-12 lg:h-[.3vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
         ></div>
         <div
-          className={`menu-line2 h-1 w-12 lg:h-[.3vw] lg:w-[4vw]  rounded-full ${
-            isOpen ? "bg-primary" : "bg-primary"
-          } transition-all duration-300`}
+          className={`menu-line2 h-1 w-12 lg:h-[.3vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
         ></div>
       </button>
 
       {/* logo */}
       <Link
         to="/"
-        className="logo z-50"
-        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        className="logo z-50 pointer-events-auto"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+          navigate("/");
+          setIsOpen(false);
+        }}
       >
         <img
-          className="md:w-40 w-30 lg:w-[15vw] pointer-events-auto"
+          className="md:w-40 w-30 lg:w-[15vw]"
           src="/images/havmor.png"
           alt="nav-logo"
         />

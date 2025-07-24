@@ -101,9 +101,12 @@ const Account = () => {
               slidesPerView={1}
               breakpoints={{
                 640: { slidesPerView: 1.5 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
+                768: { slidesPerView: 2.3 },
+                1024: { slidesPerView: 4 },
               }}
+              modules={[Navigation]}
+              navigation
+              scrollbar={{ draggable: true }}
             >
               {orders.map((order) => (
                 <SwiperSlide key={order._id}>
