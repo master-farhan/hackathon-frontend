@@ -22,14 +22,6 @@ const VideoPin = () => {
 
   return (
     <section className="relative vd-pin-section h-[110vh] overflow-hidden bg-dark-brown">
-      <div className="absolute h-full text-center w flex flex-col gap-[20vw] md:flex-row justify-between p-[4vw] items-center">
-        <h2 className="text-4xl w-full lg:text-[2.5vw] font-bold">Enjoy The Moment</h2>
-        <p className="text-lg lg:text-[1.3vw] mt-2 lg:mt-[.5vw]">
-          Discover how Havmor blends taste, joy, and creativity into every
-          scoop.
-        </p>
-      </div>
-
       <div
         style={{
           clipPath: "circle(9% at 50% 50%)",
