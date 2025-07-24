@@ -19,13 +19,7 @@ const AllFlavors = () => {
         />
       </div>
 
-      {/* Add top padding so content doesn't go under fixed search bar */}
       <section className="pt-[20vh] pb-[5vw]">
-        {/* category */}
-        {/* <div className="w-full h-[30vh] flex justify-between px-[4vw] gap-[1vw] overflow-auto scroll-auto">
-          category here 
-        </div> */}
-
         {/* card */}
         <div className="mx-auto px-5 lg:px-[4vw] py-10 lg:py-[3vw] grid gap-6 lg:gap-[2vw] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
           {icecreams.length > 0 ? (

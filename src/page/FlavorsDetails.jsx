@@ -3,6 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import { getIceCreamById } from "../data/iceCreamAPI";
 
 const FlavorsDetails = () => {
+  // Get user from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const { id } = useParams();
 
   const [flavor, setFlavor] = useState(null);
@@ -61,18 +64,19 @@ const FlavorsDetails = () => {
             {flavor.description}
           </p>
 
-          {flavor.stock ? (
-            <Link
-              to={`/orders/${id}`}
-              className="h-8 w-25 lg:w-[7vw] flex-center lg:h-[2.5vw] text-xs lg:text-[.9vw] hover:text-sm lg:hover:text-[1vw] transition-all duration-300 rounded-full bg-primary text-milk hover:bg-primary/90"
-            >
-              Order Now
-            </Link>
-          ) : (
-            <span className="h-8 w-25 lg:w-[7vw] flex-center lg:h-[2.5vw] text-xs lg:text-[.9vw] bg-dark-brown/10 rounded-full">
-              Out of Stock
-            </span>
-          )}
+          { !user?.isAdmin &&
+            (flavor.stock ? (
+              <Link
+                to={`/orders/${id}`}
+                className="h-8 w-25 lg:w-[7vw] flex-center lg:h-[2.5vw] text-xs lg:text-[.9vw] hover:text-sm lg:hover:text-[1vw] transition-all duration-300 rounded-full bg-primary text-milk hover:bg-primary/90"
+              >
+                Order Now
+              </Link>
+            ) : (
+              <span className="h-8 w-25 lg:w-[7vw] flex-center lg:h-[2.5vw] text-xs lg:text-[.9vw] bg-dark-brown/10 rounded-full">
+                Out of Stock
+              </span>
+            ))}
         </div>
       </div>
     </div>

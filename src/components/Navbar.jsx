@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { navLinks } from "../constants";
-
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +44,24 @@ const Navbar = () => {
           </NavLink>
         ))}
 
-        {/* Conditionally render Admin or Account */}
+        {user && !user?.isAdmin ? (
+          <NavLink
+            onClick={handleNavClick}
+            to={isAdmin ? "/cart" : "/cart"}
+            className={({ isActive }) =>
+              `py-5 lg:py-[4vh] w-full rounded group transition-all duration-200 text-2xl lg:text-[1.5vw] pointer-events-auto ${
+                isActive
+                  ? "bg-primary text-milk pl-[5vh]"
+                  : "hover:pl-[5vh] text-primary bg-milk hover:bg-primary/20"
+              }`
+            }
+          >
+            Cart
+          </NavLink>
+        ) : (
+          ""
+        )}
+
         {user ? (
           <NavLink
             onClick={handleNavClick}
@@ -96,16 +112,15 @@ const Navbar = () => {
       {/* logo */}
       <Link
         to="/"
-        className="logo z-50 pointer-events-auto"
+        className="logo z-100 pointer-events-auto"
         onClick={(e) => {
           e.preventDefault();
           window.scrollTo({ top: 0, behavior: "smooth" });
-          navigate("/");
           setIsOpen(false);
         }}
       >
         <img
-          className="md:w-40 w-30 lg:w-[15vw]"
+          className="md:w-40  z-100 w-30 lg:w-[15vw]"
           src="/images/havmor.png"
           alt="nav-logo"
         />

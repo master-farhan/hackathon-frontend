@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AddToCart from "./AddToCart";
-// import { addToCart } from "../data/api";
 
 const IceCreamCard = ({
   name,
@@ -13,6 +12,8 @@ const IceCreamCard = ({
   category,
   _id,
 }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div className="transition-all hover:-translate-y-[2vh] duration-300 p-4 lg:p-[1.2vw] w-full">
       <Link to={`/flavors/${_id}`}>
@@ -32,7 +33,12 @@ const IceCreamCard = ({
         <span className="text-base lg:text-[1.3vw] font-bold text-primary">
           ₹{price}
         </span>
+
         <AddToCart id={_id} />
+
+        {user?.isAdmin && (
+          <p className="text-xs lg:text-[.9vw] text-primary">view details</p>
+        )}
       </div>
     </div>
   );

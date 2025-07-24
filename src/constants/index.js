@@ -43,7 +43,7 @@ const navLinks = [
   { link: "/", name: "Home" },
   { link: "/flavors", name: "All Flavors" },
   { link: "/about", name: "About" },
-  { link: "/cart", name: "Cart" },
+  // { link: "/cart", name: "Cart" },
 ];
 
 const iceCreamCategories = [
