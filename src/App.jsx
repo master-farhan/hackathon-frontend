@@ -27,6 +27,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import Preloader from "./components/Preloader";
+import  Cursor  from "./components/Cursor";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -44,84 +45,87 @@ const App = () => {
       {isLoad ? (
         <Preloader />
       ) : (
-        <main className="text-grow min-h-screen font-ubuntu">
-          <BrowserRouter>
-            <ToastContainer position="bottom-right" />
-            <Navbar />
-            <div id="smooth-wrapper">
-              <div id="smooth-content">
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/about" element={<About />} />
-                  <Route path="/flavors" element={<AllFlavors />} />
-                  <Route path="/flavors/:id" element={<FlavorsDetails />} />
-                  <Route
-                    path="/create-icecreame"
-                    element={<CreateIceCream />}
-                  />
+        <>
+          <main className="text-grow min-h-screen font-ubuntu">
+            <BrowserRouter>
+              <ToastContainer position="bottom-right" />
+              <Navbar />
+              <div id="smooth-wrapper">
+                <div id="smooth-content">
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/about" element={<About />} />
+                    <Route path="/flavors" element={<AllFlavors />} />
+                    <Route path="/flavors/:id" element={<FlavorsDetails />} />
+                    <Route
+                      path="/create-icecreame"
+                      element={<CreateIceCream />}
+                    />
 
-                  {/* 🔐 Protected Routes */}
-                  <Route
-                    path="/account"
-                    element={
-                      <AuthRoute>
-                        <Account />
-                      </AuthRoute>
-                    }
-                  />
+                    {/* 🔐 Protected Routes */}
+                    <Route
+                      path="/account"
+                      element={
+                        <AuthRoute>
+                          <Account />
+                        </AuthRoute>
+                      }
+                    />
 
-                  <Route
-                    path="/admin"
-                    element={
-                      <AuthRoute>
-                        <Admin />
-                      </AuthRoute>
-                    }
-                  >
-                    <Route index element={<Dashboard />} />
-                    <Route path="orders" element={<SeeOrders />} />
-                    <Route path="create" element={<CreateIceCream />} />
-                    <Route path="update" element={<UpdateIceCream />} />
-                    <Route path="delete" element={<DeleteIceCream />} />
-                  </Route>
+                    <Route
+                      path="/admin"
+                      element={
+                        <AuthRoute>
+                          <Admin />
+                        </AuthRoute>
+                      }
+                    >
+                      <Route index element={<Dashboard />} />
+                      <Route path="orders" element={<SeeOrders />} />
+                      <Route path="create" element={<CreateIceCream />} />
+                      <Route path="update" element={<UpdateIceCream />} />
+                      <Route path="delete" element={<DeleteIceCream />} />
+                    </Route>
 
-                  <Route
-                    path="/orders/:id"
-                    element={
-                      <AuthRoute>
-                        <Order />
-                      </AuthRoute>
-                    }
-                  />
-                  {/* Example: Cart */}
-                  <Route
-                    path="/cart"
-                    element={
-                      <AuthRoute>
-                        <Cart />
-                      </AuthRoute>
-                    }
-                  />
+                    <Route
+                      path="/orders/:id"
+                      element={
+                        <AuthRoute>
+                          <Order />
+                        </AuthRoute>
+                      }
+                    />
+                    {/* Example: Cart */}
+                    <Route
+                      path="/cart"
+                      element={
+                        <AuthRoute>
+                          <Cart />
+                        </AuthRoute>
+                      }
+                    />
 
-                  {/* 🔓 Guest-only Routes */}
-                  <Route
-                    path="/auth"
-                    element={
-                      <GuestRoute>
-                        <AuthPage />
-                      </GuestRoute>
-                    }
-                  />
+                    {/* 🔓 Guest-only Routes */}
+                    <Route
+                      path="/auth"
+                      element={
+                        <GuestRoute>
+                          <AuthPage />
+                        </GuestRoute>
+                      }
+                    />
 
-                  {/* 404 */}
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
+                    {/* 404 */}
+                    <Route path="*" element={<NotFound />} />
+                  </Routes>
 
-                <Footer />
+                  <Footer />
+                </div>
               </div>
-            </div>
-          </BrowserRouter>
-        </main>
+            </BrowserRouter>
+          </main>
+          <Cursor />
+        </>
       )}
     </>
   );
