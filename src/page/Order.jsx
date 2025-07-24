@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { createOrder } from "../data/orderAPI";
 import { getIceCreamById } from "../data/iceCreamAPI";
 import StripePopup from "../components/StripePopup";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 
 const Order = () => {
   const navigate = useNavigate();
-
   const { id } = useParams();
   const [cartItems, setCartItems] = useState([]);
   const [formData, setFormData] = useState({
@@ -59,19 +57,26 @@ const Order = () => {
   };
 
   const placeOrder = async (method = "Cash On Delivery") => {
-    const userId = JSON.parse(localStorage.getItem("user"))?.id || 1;
+    const user = JSON.parse(localStorage.getItem("user")) || {
+      id: "guest",
+      name: "Guest",
+    };
 
     const orderData = {
-      userId: userId,
+      userId: user.id,
+      userName: user.name, // include user name
       items: cartItems.map((item) => ({
         productId: item._id,
         name: item.name,
         price: item.price,
         quantity: item.quantity || 1,
       })),
+      name: formData.name,
       address: formData.address,
       phone: formData.phone,
       paymentMethod: method,
+      status: "Pending", // default status
+      date: new Date().toISOString(), // timestamp
     };
 
     try {

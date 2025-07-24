@@ -67,7 +67,7 @@ const Account = () => {
   if (!user || user.isAdmin) return null;
 
   return (
-    <section className="min-h-screen w-full bg-milk flex items-center justify-center px-5 lg:px-[4vw] py-[15vh] text-dark-brown">
+    <section className="lg:min-h-screen w-full bg-milk flex items-center justify-center px-5 lg:px-[4vw] py-[15vh] text-dark-brown">
       <div className="bg-milk rounded-2xl py-8 lg:py-[2.5vw] w-full text-center">
         <h2 className="text-2xl lg:text-[2vw] font-bold text-dark-brown mb-4 lg:mb-[1.2vw]">
           Welcome, {user.name || "User"}!

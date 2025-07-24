@@ -1,13 +1,9 @@
+// data/userAPI.js
 import API from "./api";
 
-// Register new user (matches POST /users)
 export const registerUser = (data) => API.post("/users", data);
-
-// Login user
 export const loginUser = (data) => API.post("/users/login", data);
 
-
-// CRUD operations
 export const createUser = (data) => API.post("/users", data);
 export const getUsers = () => API.get("/users");
 export const getUserById = (id) => API.get(`/users/${id}`);
