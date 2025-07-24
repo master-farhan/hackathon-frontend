@@ -43,7 +43,7 @@ const Account = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("user");
-    navigate("/auth");
+    navigate("/");
   };
 
   const handleDelete = (id) => {

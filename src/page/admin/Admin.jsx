@@ -12,7 +12,7 @@ const adminLinks = [
 const Admin = () => {
   const handleLogout = () => {
     localStorage.clear();
-    window.location.href = "/auth";
+    window.location.href = "/";
   };
 
   return (
