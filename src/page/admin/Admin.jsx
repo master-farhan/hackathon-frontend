@@ -18,7 +18,7 @@ const Admin = () => {
   return (
     <div className="flex justify-between flex-col md:flex-row min-h-screen py-[15vh] px-5 md:px-[4vw]">
       {/* Sidebar */}
-      <aside className="md:w-[25vw] lg:w-[20vw] bg-milk text-dark-brown space-y-4 lg:space-y-[1.4vw]">
+      <aside className="md:w-[20vw] lg:w-[15vw] bg-milk text-dark-brown space-y-4 lg:space-y-[1.4vw]">
         <h2 className="text-2xl lg:text-[1.8vw] font-bold mb-6 lg:mb-[2vw]">Admin Panel</h2>
         {adminLinks.map(({ name, path }) => (
           <NavLink

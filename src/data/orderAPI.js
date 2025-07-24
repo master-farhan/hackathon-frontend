@@ -2,6 +2,7 @@
 import API from "./api";
 
 export const createOrder = (data) => API.post("/orders", data);
+
 export const getOrders = (userId) => {
   const url = userId ? `/orders?userId=${userId}` : "/orders";
   return API.get(url);
