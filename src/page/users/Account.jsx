@@ -67,7 +67,7 @@ const Account = () => {
   if (!user || user.isAdmin) return null;
 
   return (
-    <section className="lg:min-h-screen w-full bg-milk flex items-center justify-center px-5 lg:px-[4vw] py-[15vh] text-dark-brown">
+    <section className="lg:min-h-screen w-full bg-milk flex items-center justify-center px-5 lg:px-[4vw] py-[14vh] text-dark-brown">
       <div className="bg-milk rounded-2xl py-8 lg:py-[2.5vw] w-full text-center">
         <h2 className="text-2xl lg:text-[2vw] font-bold text-dark-brown mb-4 lg:mb-[1.2vw]">
           Welcome, {user.name || "User"}!
@@ -102,7 +102,7 @@ const Account = () => {
               breakpoints={{
                 640: { slidesPerView: 1.5 },
                 768: { slidesPerView: 2.3 },
-                1024: { slidesPerView: 4 },
+                1024: { slidesPerView: 3 },
               }}
               modules={[Navigation]}
               navigation
@@ -110,13 +110,13 @@ const Account = () => {
             >
               {orders.map((order) => (
                 <SwiperSlide key={order._id}>
-                  <div className="border w-full p-5 lg:p-[1vw] rounded-md bg-white shadow-md hover:bg-gray-50 transition">
-                    <p className="font-semibold text-sm lg:text-[1vw] lg:mb-[.5vw] mb-2 text-left">
+                  <div className="border w-full p-5 lg:p-[1vw] rounded-md bg-milk shadow-md hover:bg-gray-50 transition">
+                    <p className="font-semibold lg:text-[1.2vw] lg:mb-[1vw] mb-3 text-left">
                       Order ID: {order._id}
                     </p>
                     <div className="flex gap-[.5vw] flex-col">
                       <div className="flex gap-[2vw]">
-                        <p className="text-sm text-gray-700 font-semibold mb-2 text-left">
+                        <p className="lg:text-[1.2vw] text-gray-700 font-semibold mb-2 lg:mb-[.7vw] text-left">
                           Items:
                         </p>
                         <ul className="space-y-2">
@@ -128,14 +128,14 @@ const Account = () => {
                                   <img
                                     src={icecream.image}
                                     alt={icecream.name}
-                                    className="w-12 h-12 rounded object-cover"
+                                    className="w-12 h-12 lg:h-[3.2vw] lg:w-[3.2vw] rounded object-contain"
                                   />
                                 )}
                                 <div className="text-left">
-                                  <p className="font-medium">
+                                  <p className="font-medium lg:text-[1.2vw]">
                                     {icecream?.name || "Unknown Icecream"}
                                   </p>
-                                  <p className="text-sm text-gray-600">
+                                  <p className="text-sm lg:text-[1vw] text-gray-600">
                                     Qty: {item.quantity} × ₹{item.price}
                                   </p>
                                 </div>
@@ -146,7 +146,7 @@ const Account = () => {
                       </div>
                       <button
                         onClick={() => handleDelete(order._id)}
-                        className="text-red-500 text-sm mt-3 hover:underline"
+                        className="text-red-500 text-sm lg:text-[1vw] w-fit hover:underline"
                       >
                         Cancel Order
                       </button>

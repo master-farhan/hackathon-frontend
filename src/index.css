@@ -12,7 +12,7 @@
   --color-primary: #de2138;
   --color-main-bg: #140200;
   --color-grow: #faeade;
-  --color-dark-brown: #6b3c2c;
+  --color-dark-brown: #C1825F;
   --color-mid-brown: #9e6d5b;
   --color-light-brown: #e3a458;
   --color-red-brown: #7f3b2d;
@@ -23,7 +23,7 @@
   --font-sans: "Antonio", sans-serif;
   --font-paragraph: "ProximaNova, sans-serif";
 }
-
+/* 6b3c2c */
 html,
 body {
   margin: 0;

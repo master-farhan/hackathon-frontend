@@ -96,16 +96,16 @@ const Navbar = () => {
       {/* menu */}
       <button
         onClick={menuHandler}
-        className={`flex flex-col pointer-events-auto ${
+        className={`flex p-2 rounded-[2vw] flex-col pointer-events-auto ${
           isOpen ? "gap-4 lg:gap-[1vw]" : "gap-2 lg:gap-[.5vw]"
         } cursor-pointer z-50 transition-all duration-300`}
         aria-label="Toggle menu"
       >
         <div
-          className={`menu-line1 h-1 w-12 lg:h-[.3vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
+          className={`menu-line1 h-2 border w-12 lg:h-[.5vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
         ></div>
         <div
-          className={`menu-line2 h-1 w-12 lg:h-[.3vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
+          className={`menu-line2 h-2 border w-12 lg:h-[.5vw] lg:w-[4vw] rounded-full bg-primary transition-all duration-300`}
         ></div>
       </button>
 
