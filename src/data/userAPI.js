@@ -6,10 +6,6 @@ export const registerUser = (data) => API.post("/users", data);
 // Login user
 export const loginUser = (data) => API.post("/users/login", data);
 
-// Orders
-export const getOrdersByUserId = (userId) =>
-  API.get(`/orders?userId=${userId}`);
-export const createOrder = (data) => API.post("/orders", data);
 
 // CRUD operations
 export const createUser = (data) => API.post("/users", data);

@@ -30,10 +30,8 @@ const AuthPage = () => {
 
       // ✅ Redirect based on admin status
       if (user.isAdmin) {
-        window.location.href = "/admin";
-        navigate("/admin");
+        navigate("/admin"); // 🟢 Only this is needed
       } else {
-        window.location.href = "/account";
         navigate("/account");
       }
     } catch (err) {
